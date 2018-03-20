@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <list>
-#include <iostream>
-#include <vector>
+
+#include <iostream.h>
+#include<conio.h>
 #include<time.h>
 #include<stdlib.h>
 
-using namespace std;
+
 
 int main()
-{   int input ();
+{  clrscr();
+	 int input ();
     void d1(int );
 	char d;
 	int w=0;
 	time_t t;
+	int q=0;
 	unsigned int seedval;
 	seedval=(unsigned)time(&t);
 	srand(seedval);
@@ -21,11 +23,12 @@ int main()
 	cin>>z;
 	
 	int k=0;
-	bool a =true;
+	int a;
+	 a =0;
 	do{
 	x=(rand()%10);
 	
-	
+	q++;	
 	
 	d1(x);
 	cout<<"\n";	
@@ -43,13 +46,15 @@ int main()
 		break;
 	}
 	else
-		k++;
+		++k;
 
 	
 	
 	}while((k>=0));
-	cout<<"Your score is "<<k;
+	cout<<"Your score is "<<k+(1*q);
+	getchar();
 	return 0;
+
 }
 void d1(int z){
 	for(int a=0;a<=z;a++){
@@ -68,4 +73,3 @@ int input(){
 	
 return z;
 }
-    
