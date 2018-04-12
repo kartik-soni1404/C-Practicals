@@ -72,4 +72,5 @@ int input(){
 	cin>>z;
 	
 return z;
+
 }
