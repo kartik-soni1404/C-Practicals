@@ -16,9 +16,9 @@ public:
 
 };
 user m[30];
-char x='A';
-int a=1;
-fstream f,g;
+char x='A';//Row number
+int a=1;//Column number
+fstream f,g;//Streams to files
 void welcome();//To display the  welcome message
 int menu(user &x);//Menu for booking
 int screen(user &j);//Display screen along with seats
@@ -27,7 +27,7 @@ int  conflict(user &f);//To check for clashes in seats
 void display ();
 int main()
 {
-f.open("Test111.txt",ios::out);
+f.open("Test111.txt",ios::out|ios::in|ios::app);//To connect to the file
 clrscr();
 user x[30];//Creating an array of 30 users
 welcome();
@@ -43,8 +43,7 @@ if(a=='y'||a=='Y')
     clrscr();
 }while(a=='y'||a=='Y');
 
-for(int k=0;k<=i;k++)
-	cout<<m[k].name;
+
 f.close();
 return 0;
 }
@@ -55,8 +54,8 @@ void welcome(){
     cout<<"\t \t"<<"********************************************"<<"\n";
 }
 int  menu(user &y){
+//Main menu for the program 
 cout<<"Enter name =>";
-
 gets(y.name);
 cout<<"\n";
 cout<<"Select location: ";
@@ -97,12 +96,13 @@ cout<<"\n";
 x='A';
 a=1;
 cout<<"Enter seat no. [Row,Col]";
-while(k>0)
+while(k>0)//Taking input from the user for the seat number 
 {cout<<"\nYour response for seat no." << y.qty -k+1<<" :=>";
 cin>>y.row[y.qty-k]>>y.col[y.qty-k];
 k--;
 }
 char e;
+//Confirming from the user to book
 cout<<"\nDo you wist to book using the following details ?\n\n";
 cout<<"Name :"<<y.name;
 cout<<"\n";
@@ -118,7 +118,7 @@ case 4:cout<<"Poison\n";
 break;	
 	
 };
-
+//Users location
 cout<<"Location :";
 switch(y.location){
 case 1:cout<<"Sarjapur\n";
@@ -132,6 +132,7 @@ break;
 	
 };
 int m= y.qty;
+//Seat numbers
 for(int u=0;u<m;u++)
 	cout<<"Seat number "<<u+1<<":" <<y.row[u]<<y.col[u]<<"\n";
 cout<<"\nYour response :=>";
@@ -139,7 +140,7 @@ cin>>e;
 
 user l;
 if(e=='y'||e=='Y')
-
+	//Writing output to the fle
 	f.write((char*)&y,sizeof(y));
 	return 0;
 }
@@ -154,5 +155,3 @@ int  conflict (user &y){
 	
 	return 1;
 }
-
-
