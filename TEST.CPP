@@ -67,7 +67,7 @@ n:	{
 	}
 		if(strcmp(y.name,"")==0)//Check whether the name is valid
 			{	cout<<"Please enter valid name!!!\n";
-				goto n;//If name is invalid again take the name from the user until he enters a valid one
+				goto n;//If name is invalid again take it from the user until he enters a valid one
 			}
 loc:
 	{
@@ -79,7 +79,7 @@ loc:
 		if(y.location>4)
 		{	
 		cout<<"\nPlease enter valid location!!!\n";
-		goto loc;//If location is invalid again take the name from the user until he enters a valid one
+		goto loc;//If location is invalid again take it from the user until he enters a valid one
 		}
 mov:
 	{
@@ -93,7 +93,7 @@ mov:
 		if(y.movie>4)
 		{
 			cout<<"\nPlease enter valid movie!!!\n";
-			goto mov;//If movie is invalid again take the name from the user until he enters a valid one
+			goto mov;//If movie is invalid again take it from the user until he enters a valid one
 		}
 	cout<<"\nSelect number of seats ";
 	cout<<"\nYour response :=>";
@@ -137,7 +137,7 @@ for(int s=0;s<y.qty;s++)
 		if(Q>'D'||y.col[s]>5)
 		{
 			cout<<"\nPlease enter valid seat no.s!!!";
-			continue;//If seat is invalid again take the name from the user until he enters a valid one
+			continue;//If seat is invalid again take it from the user until he enters a valid one
 		}
 }
 
