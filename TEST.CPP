@@ -4,6 +4,7 @@
 #include<fstream.h>
 #include<string.h>
 #include<stdio.h>
+
 class user{
 public:
     char name[80];
@@ -17,6 +18,7 @@ public:
 
 };
 user m[30];
+void display(user u);
 char Q;
 char x='A';//Row number
 int a=1;//Column number
@@ -25,23 +27,23 @@ void welcome();//To display the  welcome message
 int menu(user &x);//Menu for booking
 int screen(user &j);//Display screen along with seats
 void check(user &f);//To check for valid responses
-
+int display(int J);
 
 int main()
 {
-f.open("Output.txt",ios::out|ios::in|ios::app);//To connect to the file
+f.open("Output1.txt",ios::out|ios::in|ios::app);//To connect to the file
 
 clrscr();
 
 user x[30];//Creating an array of 30 users
 welcome();
-int i=0;//Index for the users
+int i=0;
 char a='Y';
 do{
 menu(x[i]);
 screen(x[i]);
 i++;
-cout<<"\n Continue booking?";//Infinite menu driven program 
+cout<<"\nContinue booking?";//Infinite menu driven program 
 cin>>a;
 if(a=='y'||a=='Y')
     clrscr();
@@ -118,9 +120,14 @@ for(int i =0 ;i<5;i++)
 			{
 				if(i==0)
 					cout<<"  "<<a++<<"  ";
+				else{
+				if((display((((1000*y.movie)+100*y.location)+(10*i)+k+1)))==1)
+					cout<<"  "<<" # ";
+				
+				
 				else
 					cout<<"  "<<" * ";
-			}
+			}}
 	cout<<"\n";
 	}
 x='A';//To display the row number
@@ -173,6 +180,7 @@ switch(y.location){
 };
 int m= y.qty;
 //Seat numbers
+
 for(int u=0;u<m;u++)
 	cout<<"Seat number "<<u+1<<":" <<char(y.row[u]+65)<<y.col[u]<<"\n";
 cout<<"\nYour response :=>";
@@ -181,9 +189,50 @@ cin>>e;
 user l;
 if(e=='y'||e=='Y')
 	//Writing output to the file
-	 
-	f.write((char*)&y,sizeof(y));
-
+	
+	
+	for(int V=0;V<y.qty;V++)
+	{f.clear();
+	f.seekg(0);
+	int k=0;
+	while(!f.eof()){
+		
+		f>>k;
+		
+		if(k!=0)
+		{
+		if((((1000*y.movie)+100*y.location)+y.code[V])==k)	
+		{	cout<<"\nPlease choose another one !!\n";
+		return 1;
+		
+		}
+		}
+		k=0;		
+		
+	}
+	f.clear();
+	f<<(((1000*y.movie)+100*y.location)+y.code[V]);
+	f<<"  ";}
+	
 	return 0;
 }
-
+int display(int J){
+	f.clear();
+	f.seekg(0);
+	int k=0;
+	while(!f.eof()){
+		
+		f>>k;
+		
+		if(k!=0)
+		{
+		if(J==k)	
+			return 1;
+		}
+		k=0;		
+		
+	}
+	
+	
+	return 0;
+}
