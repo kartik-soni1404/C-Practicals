@@ -147,7 +147,6 @@ for(int s=0;s<y.qty;s++)
 			continue;//If seat is invalid again take it from the user until he enters a valid one
 		}
 }
-
 char e;//User ans choice
 //Confirming from the user to book
 cout<<"\nDo you wist to book using the following details ?\n\n";
@@ -163,7 +162,6 @@ switch(y.movie){
 	break;
 	case 4:cout<<"Poison\n";
 	break;	
-		
 };
 //Users location
 cout<<"Location :";
@@ -175,64 +173,52 @@ switch(y.location){
 	case 3:cout<<"Lal Bagh \n";
 	break;
 	case 4:cout<<"Hoskote\n";
-	break;	
-		
+	break;			
 };
 int m= y.qty;
 //Seat numbers
-
 for(int u=0;u<m;u++)
-	cout<<"Seat number "<<u+1<<":" <<char(y.row[u]+65)<<y.col[u]<<"\n";
+cout<<"Seat number "<<u+1<<":" <<char(y.row[u]+65)<<y.col[u]<<"\n";
+
 cout<<"\nYour response :=>";
 cin>>e;
-
 user l;
 if(e=='y'||e=='Y')
 	//Writing output to the file
-	
-	
 	for(int V=0;V<y.qty;V++)
-	{f.clear();
+	{
+	f.clear();
 	f.seekg(0);
 	int k=0;
 	while(!f.eof()){
-		
 		f>>k;
-		
 		if(k!=0)
 		{
-		if((((1000*y.movie)+100*y.location)+y.code[V])==k)	
+		if((((1000*y.movie)+100*y.location)+y.code[V])==k)	//Checking if the seat is previously booked
 		{	cout<<"\nPlease choose another one !!\n";
 		return 1;
-		
 		}
 		}
 		k=0;		
-		
 	}
 	f.clear();
 	f<<(((1000*y.movie)+100*y.location)+y.code[V]);
 	f<<"  ";}
-	
 	return 0;
-}
+	}
 int display(int J){
+	//To check for previously booked seats 
 	f.clear();
 	f.seekg(0);
 	int k=0;
 	while(!f.eof()){
-		
 		f>>k;
-		
 		if(k!=0)
 		{
 		if(J==k)	
 			return 1;
 		}
 		k=0;		
-		
-	}
-	
-	
+		}
 	return 0;
 }
