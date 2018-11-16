@@ -106,6 +106,7 @@ mov:
 }
 int screen(user &y){
 int k=y.qty;//No of seats
+seatx:
 
 cout<<"\t ==========SCREEN========== \n"	;
 //To display the seats
@@ -130,13 +131,14 @@ for(int i =0 ;i<5;i++)
 			}}
 	cout<<"\n";
 	}
+cout<<"\n        LEGEND: (*)=>AVAILABLE (#)=>BOOKED \n";
 x='A';//To display the row number
 a=1;//To display the column number
 
 seats:
 cout<<"Enter seat no. [Row,Col]";
 for(int s=0;s<y.qty;s++)
-{
+{	x:
 	cout<<"\nYour response for seat no." << s+1<<" :=>";
 	cin>>Q>>y.col[s];//User inputs his seat number
 	y.row[s]=Q-65;//Converting from char to int 
@@ -144,7 +146,7 @@ for(int s=0;s<y.qty;s++)
 		if(Q>'D'||y.col[s]>5)
 		{
 			cout<<"\nPlease enter valid seat no.s!!!";
-			continue;//If seat is invalid again take it from the user until he enters a valid one
+			goto x;//If seat is invalid again take it from the user until he enters a valid one
 		}
 }
 char e;//User ans choice
@@ -196,7 +198,7 @@ if(e=='y'||e=='Y')
 		{
 		if((((1000*y.movie)+100*y.location)+y.code[V])==k)	//Checking if the seat is previously booked
 		{	cout<<"\nPlease choose another one !!\n";
-		return 1;
+			goto seatx;
 		}
 		}
 		k=0;		
