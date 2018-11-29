@@ -57,7 +57,7 @@ return 0;
 //For heading display
 void welcome(){
     cout<<"\t \t"<<"********************************************"<<"\n";
-    cout<<"\t \t"<<"**********"<<"Welcome to Book My show"<<"********** \n";
+    cout<<"\t \t"<<"**********"<<"Welcome to Cinema Time"<<"************ \n";
     cout<<"\t \t"<<"********************************************"<<"\n";
 }
 int  menu(user &y){
