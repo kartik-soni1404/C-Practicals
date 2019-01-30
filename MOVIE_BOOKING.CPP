@@ -98,13 +98,13 @@ mov:
 			cout<<"\nPlease enter valid movie!!!\n";
 			goto mov;//If movie is invalid again take it from the user until he enters a valid one
 		}
-	cout<<"\nSelect number of seats ";
+	cout<<"Select number of seats ";
 	cout<<"\nYour response :=>";
 	cin>>y.qty;
 	cout<<"\n";
 tim:
 	{
-	cout<<"\n";
+	
 	cout<<"Select time ";
 	cout<<"\n1.8:00 AM  \n2.11:00 AM \n3.1:00 PM \n4.4:00 PM ";
 	cout<<"\nYour response :=>";
@@ -145,7 +145,7 @@ for(int i =0 ;i<5;i++)
 				else
 					cout<<"  "<<" * ";
 			}}
-	// cout<<"\n";
+	cout<<"\n";
 	}
 cout<<"\n        LEGEND: (*)=>AVAILABLE (#)=>BOOKED \n";
 x='A';//To display the row number
@@ -159,7 +159,7 @@ for(int s=0;s<y.qty;s++)
 	cin>>Q>>y.col[s];//User inputs his seat number
 	y.row[s]=Q-65;//Converting from char to int 
 	y.code[s]=(10*(y.row[s]+1))+y.col[s];//A code that uniquely stores both row and column number
-		if(Q>'D'||y.col[s]>5)
+		if(Q>'D'||y.col[s]>5||Q<'A'||y.col[s]<1)
 		{
 			cout<<"\nPlease enter valid seat no.s!!!";
 			goto x;//If seat is invalid again take it from the user until he enters a valid one
@@ -167,7 +167,8 @@ for(int s=0;s<y.qty;s++)
 }
 char e;//User ans choice
 //Confirming from the user to book
-cout<<"\nDo you wist to book using the following details ?\n\n";
+cout<<"\nDo you wist to book using the following details ?\n";
+cout<<"\n*********************************\n";
 cout<<"Name :"<<y.name;
 cout<<"\n";
 cout<<"Movie name:";
@@ -209,7 +210,7 @@ switch(y.tim){
 //Seat numbers
 for(int u=0;u<m;u++)
 cout<<"Seat number "<<u+1<<":" <<char(y.row[u]+65)<<y.col[u]<<"\n";
-
+cout<<"*********************************";
 cout<<"\nYour response :=>";
 cin>>e;
 user l;
@@ -225,7 +226,7 @@ if(e=='y'||e=='Y')
 		if(k!=0)
 		{
 		if((((10000*y.tim)+(1000*y.movie)+100*y.location)+y.code[V])==k)	//Checking if the seat is previously booked
-		{	cout<<"\nPlease choose another one !!\n";
+		{	cout<<"\nPlease choose another seat !!\n";
 			goto seatx;
 		}
 		}
@@ -234,6 +235,9 @@ if(e=='y'||e=='Y')
 	f.clear();
 	f<<(((10000*y.tim)+(1000*y.movie)+100*y.location)+y.code[V]);
 	f<<"  ";}
+	cout<<"*********************************\n";
+	cout<<"Net amount to be paid:"<<y.qty*300;
+	cout<<"\n*********************************\n";
 	return 0;
 	}
 int display(int J){
