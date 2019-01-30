@@ -10,6 +10,7 @@ public:
     char name[80];
     int location;
     int movie;
+	int tim;
     int qty;//No of seats
     int row[10];
     int col[10];
@@ -101,6 +102,21 @@ mov:
 	cout<<"\nYour response :=>";
 	cin>>y.qty;
 	cout<<"\n";
+tim:
+	{
+	cout<<"\n";
+	cout<<"Select time ";
+	cout<<"\n1.8:00 AM  \n2.11:00 AM \n3.1:00 PM \n4.4:00 PM ";
+	cout<<"\nYour response :=>";
+	cin>>y.tim;//User inputs his time
+	cout<<"\n";
+	}
+		if(y.tim>4)
+		{
+			cout<<"\nPlease enter valid time!!!\n";
+			goto tim;//If time is invalid again take it from the user until he enters a valid one
+		}
+	
 
 	return 0;
 }
@@ -122,14 +138,14 @@ for(int i =0 ;i<5;i++)
 				if(i==0)
 					cout<<"  "<<a++<<"  ";
 				else{
-				if((display((((1000*y.movie)+100*y.location)+(10*i)+k+1)))==1)
+				if((display((((10000*y.tim)+(1000*y.movie)+100*y.location)+(10*i)+k+1)))==1)
 					cout<<"  "<<" # ";
 				
 				
 				else
 					cout<<"  "<<" * ";
 			}}
-	cout<<"\n";
+	// cout<<"\n";
 	}
 cout<<"\n        LEGEND: (*)=>AVAILABLE (#)=>BOOKED \n";
 x='A';//To display the row number
@@ -178,6 +194,18 @@ switch(y.location){
 	break;			
 };
 int m= y.qty;
+//Time Slots 
+cout<<"Time :";
+switch(y.tim){
+	case 1:cout<<"8:00AM\n";
+	break;
+	case 2:cout<<"11:00AM\n";
+	break;
+	case 3:cout<<"1:00PM\n";
+	break;
+	case 4:cout<<"4:00PM\n";
+	break;			
+};
 //Seat numbers
 for(int u=0;u<m;u++)
 cout<<"Seat number "<<u+1<<":" <<char(y.row[u]+65)<<y.col[u]<<"\n";
@@ -196,7 +224,7 @@ if(e=='y'||e=='Y')
 		f>>k;
 		if(k!=0)
 		{
-		if((((1000*y.movie)+100*y.location)+y.code[V])==k)	//Checking if the seat is previously booked
+		if((((10000*y.tim)+(1000*y.movie)+100*y.location)+y.code[V])==k)	//Checking if the seat is previously booked
 		{	cout<<"\nPlease choose another one !!\n";
 			goto seatx;
 		}
@@ -204,7 +232,7 @@ if(e=='y'||e=='Y')
 		k=0;		
 	}
 	f.clear();
-	f<<(((1000*y.movie)+100*y.location)+y.code[V]);
+	f<<(((10000*y.tim)+(1000*y.movie)+100*y.location)+y.code[V]);
 	f<<"  ";}
 	return 0;
 	}
