@@ -1,0 +1,82 @@
+# depslib dependency file v1.0
+1582110469 source:c:\users\kartik\desktop\new folder\moi\main.c
+	"basic.h"
+	"login.h"
+	"signup.h"
+
+1582878323 c:\users\kartik\desktop\new folder\moi\login.h
+	"act1.h"
+
+1582432948 c:\users\kartik\desktop\new folder\moi\basic.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1582060321 c:\users\kartik\desktop\new folder\moi\signup.h
+
+1582435222 c:\users\kartik\desktop\new folder\moi\act1.h
+
+1583083155 source:c:\users\kartik\desktop\c\moi\main.c
+	"basic.h"
+	"login.h"
+	"signup.h"
+
+1582432948 c:\users\kartik\desktop\c\moi\basic.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1583431998 c:\users\kartik\desktop\c\moi\login.h
+	"User.h"
+
+1583950048 c:\users\kartik\desktop\c\moi\act1.h
+	"verify.h"
+	"Disp.h"
+
+1583949156 c:\users\kartik\desktop\c\moi\signup.h
+
+1583081518 c:\users\kartik\desktop\c\moi\verify.h
+
+1585154234 c:\users\kartik\desktop\c\moi\user.h
+	"act1.h"
+	"Review.h"
+	"Cancel.h"
+
+1585150104 c:\users\kartik\desktop\c\moi\review.h
+
+1583950333 c:\users\kartik\desktop\c\moi\disp.h
+
+1585683203 c:\users\kartik\desktop\c\moi\cancel.h
+
+1583083155 source:c:\users\kartik\desktop\college\c_17\code\main.c
+	"basic.h"
+	"login.h"
+	"signup.h"
+
+1582432948 c:\users\kartik\desktop\college\c_17\code\basic.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1583431998 c:\users\kartik\desktop\college\c_17\code\login.h
+	"User.h"
+
+1585154234 c:\users\kartik\desktop\college\c_17\code\user.h
+	"act1.h"
+	"Review.h"
+	"Cancel.h"
+
+1583950048 c:\users\kartik\desktop\college\c_17\code\act1.h
+	"verify.h"
+	"Disp.h"
+
+1583081518 c:\users\kartik\desktop\college\c_17\code\verify.h
+
+1583950333 c:\users\kartik\desktop\college\c_17\code\disp.h
+
+1585150104 c:\users\kartik\desktop\college\c_17\code\review.h
+
+1585683203 c:\users\kartik\desktop\college\c_17\code\cancel.h
+
+1583949156 c:\users\kartik\desktop\college\c_17\code\signup.h
+
